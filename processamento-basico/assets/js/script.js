@@ -26,13 +26,6 @@ class RGBColor {
     }
 }
 
-class RGBAColor extends RGBColor {
-    constructor(r, g, b, a) {
-        super(r, g, b);
-        this.alpha = a;
-    }
-}
-
 class MatrixImage {
     constructor(imageData) {
         this.imageData = imageData;
@@ -41,7 +34,7 @@ class MatrixImage {
     }
     getPixel(x, y) {
         let position = ((y * (this.width * 4)) + (x * 4));
-        return new RGBAColor(
+        return new RGBColor(
             this.imageData.data[position],  // red
             this.imageData.data[position + 1],  // green
             this.imageData.data[position + 2],  // blue
